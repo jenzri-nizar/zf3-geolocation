@@ -24,3 +24,6 @@ Le module doit être enregistré dans **config/modules.config.php**
     'Zf3\Geolocation'
 ),
 ```
+
+##Configuration
+Modifiez les paramètres dans le fichier config/geoip.local.php
