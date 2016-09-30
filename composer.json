@@ -1,0 +1,21 @@
+{
+  "name": "jenzri-nizar/zf3-geolocation",
+  "description": "Zend Framework geolocation",
+  "keywords": ["zf3", "geolocation"],
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Jenzri Nizar",
+      "email": "jenzri.nizar.off@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "leafo/scssphp": "dev-master"
+  },
+  "autoload": {
+    "psr-4": { "Zf3\\Geolocation\\": "src/" }
+  }
+}
