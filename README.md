@@ -26,4 +26,6 @@ Le module doit être enregistré dans **config/modules.config.php**
 ```
 
 ##Configuration
+Copiez le fichier situé dans vendor\jenzri-nizar\zf3-geolocation\config\geoip.local.php à config/geoip.local.php
+
 Modifiez les paramètres dans le fichier config/geoip.local.php
