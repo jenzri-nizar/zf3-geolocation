@@ -30,6 +30,34 @@ Copiez le fichier situé dans vendor\jenzri-nizar\zf3-geolocation\config\geoip.l
 
 Modifiez les paramètres dans le fichier config/geoip.local.php
 
+
+```php
+
+provider - Le nom du plug-in à utiliser (voir exemples @vendor/jenzri-nizar/zf3-geolocation/src/Service/plugins/);
+
+return_formats - Les formats de retour pris en charge par le plugin
+
+api_key - Si nécessaire, vous pouvez passer votre clé api.
+
+```
+
+### Plugins
+
+Plugins sont des fichiers PHP simples, qui renvoie un tableau avec trois variables:
+- plugin_url :URL du service Web, avec trois balises spéciales:
+
+a) {{accepted_formats}}
+
+b) {{ip}}
+
+c) {{api_key}}
+
+Ces balises seront remplacées par leurs valeurs respectives.
+
+- accepted_formats : Un tableau avec les formats acceptables   (exemple ['csv', 'php', 'json', 'xml'])
+
+- default_accepted_format : Chaîne avec le format de retour par défaut. (exemple "php")
+
 ##Exemple
 ```php
 public function geopipAction(){
@@ -77,3 +105,4 @@ function cc($amount,$GeoIp) {
    <p><?php  echo '<h3>Product A costs $800  ' . cc(800,$GeoIp) . '</h3>'; ?></p>
 </div>
 ```
+![alt tag](https://raw.githubusercontent.com/jenzri-nizar/zf3-geolocation/master/Capture.PNG)
