@@ -9,7 +9,7 @@ zend framework 3 geolocation
 Dans la section:"require"
 
 ```php
-composer require jenzri-nizar/zf3-geolocation": "v1.0"
+composer require jenzri-nizar/zf3-geolocation v1.0
 ```
 2) Ouvrez votre ligne de commande et exécutez
 
