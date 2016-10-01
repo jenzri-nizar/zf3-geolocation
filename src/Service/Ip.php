@@ -9,6 +9,8 @@
 namespace Zf3\Geolocation\Service;
 
 
+use Zend\Config\Reader\Xml;
+
 class Ip
 {
 
@@ -166,7 +168,7 @@ class Ip
 
     /**
      * @param null $ip
-     * @return mixed|string
+     * @return object|Xml|string
      */
     public  function getInfo($ip=NULL){
 
@@ -176,11 +178,16 @@ class Ip
         $url = $this->createUrl($ip);
 
        // print_r($url); exit;
+        $datar=file_get_contents($url);
+        switch ($this->getReturnFormats()){
+            case "php":$datar=unserialize($datar);break;
+            case "json":$datar=\Zend\Json\Decoder::decode($datar);break;
+            case "xml":$xml=new Xml();
+                $datar=$xml->fromString($datar);
+                ;break;
+        }
 
-        if($this->getReturnFormats() == 'php')
-            return unserialize(file_get_contents($url));
-        else
-            return file_get_contents($url);
+        return $datar;
     }
 
     /**
