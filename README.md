@@ -58,6 +58,18 @@ Ces balises seront remplacées par leurs valeurs respectives.
 
 - default_accepted_format : Chaîne avec le format de retour par défaut. (exemple "php")
 
+### Exemple de fichier Plugin
+
+```php
+<?php
+
+$plugin = [
+            'plugin_url'                => 'http://www.geoplugin.net/{{accepted_formats}}.gp?ip={{ip}}',
+            'accepted_formats'          => ['json', 'php', 'xml'],
+            'default_accepted_format'   => 'php',
+    ];
+
+```
 ##Exemple
 ```php
 public function geopipAction(){
